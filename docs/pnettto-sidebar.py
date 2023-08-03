@@ -169,7 +169,7 @@ def scan_dir(dir_path='.', level=0):
 
             if os.path.isfile(entry_path):
                 # Ignore files that are not markdown files
-                if '.md' not in entry_file_name:
+                if '.md' not in entry_file_name or 'readme.md' == entry_file_name.lower():
                     continue
 
                 # Found suitable sidebar item, write it down
@@ -192,7 +192,7 @@ def scan_dir(dir_path='.', level=0):
 # * [Summary](./summary.md)
 # '''
 default_header = '''
-🏠[Home](/)
+[🏠 Home](Readme.md)
 '''
 
 # Max levels
