@@ -1,0 +1,6 @@
+
+{
+    "doc-sidebar": "node docs/generate-sidebar.js",
+    "doc-serve": "docsify serve docs",
+    "doc": "run-p doc-sidebar doc-serve"
+  }

@@ -1,0 +1,18 @@
+/* theme properties */
+:root {
+  /* Reduce the font size */
+  --base-font-size: 14px;
+
+      
+  /* Change the theme color hue (0-360) default:325*/
+  --theme-hue: 100;
+  /* --theme-color   : purple; */
+
+
+
+  
+  /* Add sidebar navigation bullets */
+  /* --sidebar-nav-link-before-content-l1: "😀"; */
+  /* --sidebar-nav-link-before-content-l2: "💩"; */
+}
+
