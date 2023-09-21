@@ -94,7 +94,15 @@ def scan_dir(dir_path='.', level=0):
             if os.path.isdir(entry_path):
                 entry_path = dir_path + '/_i_' + entry_file_name
 
-            index_file.write(f"- [{entry_display_name}]({entry_path})\n")
+            # Replace spaces with %20 using str.replace()
+            entry_path_wo_space = entry_path.replace(" ", "%20")
+
+            # Check if the string does not end with ".md"
+            if not entry_path_wo_space.endswith(".md"):
+                # Append "':haha'" to the end of the string
+                entry_path_wo_space = entry_path_wo_space + " ':ignore'"
+
+            index_file.write(f"- [{entry_display_name}]({entry_path_wo_space})\n")
 
         index_file.close()
 
@@ -183,6 +191,7 @@ def scan_dir(dir_path='.', level=0):
                 scan_dir(entry_path, sublevel)
 
     execute()
+    remove_index_files(".")
 
 
 # Define a section that is always going to be at the top of the sidebar. The
